@@ -1,0 +1,181 @@
+/*Barlow Semi Condensed Google Font*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+:root{
+
+  /*colors*/
+  --col-violet: 263, 55%, 52%;
+  --col-very-dark-grayish-blue: 217, 19%, 35%;
+  --col-very-dark-blackish-blue: 219, 29%, 14%;
+  --col-white: 0, 0%, 100%;
+  --col-light-gray: hsl(0, 0%, 81%);
+  --col-light-grayish-blue: hsl(210, 46%, 95%);
+
+  /*font*/
+  --fw-500:500;
+  --fw-600:600;
+
+}
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+p{
+  font-size: 13px;
+}
+body{
+  background-color: var(--col-light-grayish-blue);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 3rem;
+}
+.container{
+  display: grid;
+  max-width: 1320px;
+  grid-template-areas: 
+  'b1 b1 b2 b3'
+  'b4 b5 b5 b3' ;
+  grid-gap:2rem;
+}
+/*----------------------------
+------TESTIMONIAL BOXES-------
+-----------------------------*/
+#user-1{
+  grid-area: b1;
+  background-color: hsl(var(--col-violet));
+  /*quote*/
+  background-image:url("../images/bg-pattern-quotation.svg") ;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-position: top left calc(100% - 4rem);
+}
+#user-2{
+  grid-area: b2;
+  background-color: hsl(var(--col-very-dark-grayish-blue));
+}
+#user-3{
+  grid-area: b3;
+  background-color: hsl(var(--col-white));
+}
+#user-4{
+  grid-area: b4;
+  background-color: hsl(var(--col-white));
+}
+#user-5{
+  grid-area: b5;
+  background-color: hsl(var(--col-very-dark-blackish-blue));
+}
+.user-box{
+  padding: 2rem;
+  box-shadow: 0px 7px 24px rgb(9 33 53 / 18%);
+  border-radius: 10px;
+}
+.user-desc{
+  display: flex;
+  margin-bottom:1rem;
+}
+.user-image{
+  border-radius: 100%;
+  width: 35px;
+  border: 2px solid hsl(var(--col-very-dark-grayish-blue));
+  margin-right: 1.5rem;
+}
+.user-name{
+  font-weight: var(--fw-600);
+  font-size: 0.87rem;
+}
+.user-status{
+  font-size: 0.7rem;
+}
+.user-name,
+.user-status{
+  letter-spacing: 0.3px;
+}
+.main-heading{
+  margin-bottom:1.3rem;
+}
+.main-text{
+  line-height: 20px;
+}
+
+/*BRIGHT STYLE*/
+.main-heading.bright-font,
+.user-name.bright-font{
+  color: hsl(var(--col-white), 90%);
+}
+.main-text.bright-font{
+  color: hsl(var(--col-white), 70%);
+}
+.user-status.bright-font{
+  color: hsl(var(--col-white), 50%);
+}
+.user-image.bright-font{
+  border-color: hsl(var(--col-white), 55%);
+}
+
+/*DARK STYLE*/
+.main-heading.dark-font,
+.user-name.dark-font{
+  color: hsl(var(--col-very-dark-grayish-blue),90%);
+}
+.main-text.dark-font{
+  color: hsl(var(--col-very-dark-grayish-blue), 70%);
+}
+.user-status.dark-font{
+  color: hsl(var(--col-very-dark-grayish-blue), 50%);
+}
+.user-image.dark-font{
+  border-color: hsl(var(--col-very-dark-grayish-blue), 55%);
+}
+
+/*----------------------------
+------------MEDIA-------------
+-----------------------------*/
+@media (max-width:1205px){
+  body{
+    height: unset;
+  }
+  .container{
+    grid-template-areas:
+    'b1 b2 '
+    'b3 b3 '
+    'b4 b5';
+    grid-gap:1.2rem;
+  }
+
+}
+@media (max-width:900px){
+  body{
+    padding-inline: 1.5rem;
+  }
+  .container{
+      width: 80%;
+      margin-inline: auto;
+  }
+  .container{
+    grid-template-areas:
+    'b1'
+    'b2'
+    'b3'
+    'b4'
+    'b5' ;
+  }
+}
+@media (max-width:680px){
+  .container{
+    width: 100%;
+    margin-inline: auto;
+  }
+  #user-1{
+    background-position:top left calc(100% - 2rem) ;
+  }
+}
+@media (max-width:360px){
+  #user-1{
+    background-image: none;
+  }
+}
